@@ -1,0 +1,39 @@
+.hero {
+  flex: 1;
+}
+
+.inner {
+  padding-block: var(--space-9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
+  max-width: 720px;
+}
+
+.title {
+  font-size: var(--fs-4xl);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: var(--fs-3xl);
+  }
+
+  .inner {
+    padding-block: var(--space-7);
+  }
+}
