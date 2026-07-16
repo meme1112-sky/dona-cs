@@ -78,6 +78,23 @@
   object-fit: contain;
   object-position: right center;
   mix-blend-mode: lighten;
+  /* Fade the stock/scope (right/"beginning") into the dark bg — matches Figma */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 48%,
+    rgba(0, 0, 0, 0.75) 68%,
+    rgba(0, 0, 0, 0.28) 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 48%,
+    rgba(0, 0, 0, 0.75) 68%,
+    rgba(0, 0, 0, 0.28) 88%,
+    transparent 100%
+  );
 }
 
 .grid {
