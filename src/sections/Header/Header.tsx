@@ -1,19 +1,46 @@
+import {
+  FaGift,
+  FaEnvelope,
+  FaTwitch,
+  FaYoutube,
+  FaInstagram,
+  FaTiktok,
+  FaXTwitter,
+  FaLink,
+} from 'react-icons/fa6'
 import Container from '@/components/Container/Container'
-import Button from '@/components/Button/Button'
+import NavLink from '@/components/NavLink/NavLink'
+import IconLink from '@/components/IconLink/IconLink'
+import logo from '@/assets/dona1.png'
 import styles from './Header.module.css'
+
+
+const socialLinks = [
+  { label: 'Twitch', href: '#', icon: FaTwitch },
+  { label: 'YouTube', href: '#', icon: FaYoutube },
+  { label: 'Instagram', href: '#', icon: FaInstagram, highlighted: true },
+  { label: 'TikTok', href: '#', icon: FaTiktok },
+  { label: 'X', href: '#', icon: FaXTwitter },
+  { label: 'Linktree', href: '#', icon: FaLink },
+]
 
 function Header() {
   return (
-    <header className={styles.header}>
-      <Container className={styles.inner}>
-        <span className={styles.logo}>Logo</span>
-        <nav className={styles.nav}>
-          <a href="#features">Features</a>
-          <a href="#footer">Contact</a>
+    <Container className={styles.container}>
+      <header className={styles.header}>
+        <img src={logo} alt="Logo" className={styles.heroLogo} />
+
+        <nav className={styles.nav} aria-label="Primary">
+          <NavLink />
         </nav>
-        <Button variant="secondary">Get started</Button>
-      </Container>
-    </header>
+
+        <ul className={styles.socials} aria-label="Social links">
+            <li>
+              <IconLink />
+            </li>
+        </ul>
+      </header>
+    </Container>
   )
 }
 

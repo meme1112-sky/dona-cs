@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+.iconGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.iconTitle {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  letter-spacing: 1%;
+  text-transform: uppercase;
+  color: var(--color-text-muted)
+}

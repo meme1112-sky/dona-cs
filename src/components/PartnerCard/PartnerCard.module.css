@@ -1,0 +1,140 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 56px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, #000 35%, var(--color-surface));
+}
+
+.logoSlot {
+  display: flex;
+  align-items: center;
+  min-height: 28px;
+  min-width: 96px;
+}
+
+.logo {
+  height: 22px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+}
+
+.code {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-primary);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.code strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.codeLabel {
+  color: white;
+  font-weight: lighter !important;
+}
+
+.codeLabelStrong {
+  color: var(--color-primary);
+  font-weight: lighter !important;
+}
+
+.copyIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 96px;
+  padding-inline: var(--space-2);
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.star {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  flex-shrink: 0;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.placeholderTitle {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase; 
+  color: white;
+}
+
+.placeholderTitle span {
+  color: var(--color-primary);
+}
+
+.placeholderText {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-normal);
+}
+
+.action {
+  width: 100%;
+}
+
+.actionIcon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}

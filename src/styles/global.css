@@ -6,6 +6,9 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  /* Single page scrollbar only (avoid nested scroll on body/#root) */
+  overflow-y: auto;
 }
 
 body {
@@ -20,6 +23,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: visible;
 }
 
 h1,
@@ -59,4 +63,6 @@ button {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
+  overflow: visible;
+  max-width: 100%;
 }

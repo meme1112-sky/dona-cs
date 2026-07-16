@@ -3,19 +3,22 @@
   (Inspect panel > Code, or a shared variables/styles export).
 */
 :root {
-  /* Color */
-  --color-bg: #ffffff;
-  --color-surface: #f6f6f8;
-  --color-text: #1a1a1f;
-  --color-text-muted: #6b6b76;
-  --color-border: #e4e4e9;
-  --color-primary: #4f46e5;
-  --color-primary-hover: #4338ca;
-  --color-primary-contrast: #ffffff;
+  /* Color — matches design palette */
+  --color-bg: #0d0f0e;
+  --color-surface: #1a1f1c;
+  --color-surface-translucent: rgba(26, 31, 28, 0.7);
+  --color-text: #f5f2ea;
+  --color-text-muted: #a3a39c;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-primary: #ca9f55;
+  --color-primary-hover: #d9b563;
+  --color-primary-contrast: #17140a;
+  --color-dark-green: #173d32;
+  --color-rich-brown: #4c3629;
 
   /* Typography */
-  --font-sans:
-    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-script: 'Alex Brush', cursive;
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
   --fs-base: 1rem;
@@ -24,6 +27,7 @@
   --fs-2xl: 2rem;
   --fs-3xl: 2.75rem;
   --fs-4xl: 3.5rem;
+  --fs-5xl: 4.5rem;
   --lh-tight: 1.15;
   --lh-normal: 1.5;
 
@@ -39,23 +43,13 @@
   --space-9: 96px;
 
   /* Layout */
-  --content-width: 1200px;
+  --content-width: 1400px;
+  --hero-header-overlap: 96px;
+  --hero-banner-lift: 87px;
+  --header-z: 10;
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --shadow-sm: 0 1px 2px rgba(16, 16, 20, 0.06);
   --shadow-md: 0 8px 24px rgba(16, 16, 20, 0.08);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #121214;
-    --color-surface: #1b1b1f;
-    --color-text: #f2f2f5;
-    --color-text-muted: #9a9aa4;
-    --color-border: #2b2b31;
-    --color-primary: #818cf8;
-    --color-primary-hover: #a5b4fc;
-    --color-primary-contrast: #121214;
-  }
 }
