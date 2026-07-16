@@ -49,15 +49,29 @@
   color: #E8EEF95E;
 }
 
-
 @media (max-width: 860px) {
+  .footer {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-5);
+    border-radius: var(--radius-md);
+  }
+
   .nav {
-    display: none;
+    position: static;
+    transform: none;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
-@media (max-width: 560px) {
-  .socials {
-    display: none;
+@media (max-width: 480px) {
+  .copyright {
+    padding: 24px var(--space-5);
+    text-align: center;
   }
 }

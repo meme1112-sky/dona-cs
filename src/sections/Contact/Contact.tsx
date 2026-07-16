@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import Container from '@/components/Container/Container'
 import Button from '@/components/Button/Button'
 import planeLeft from '@/assets/Paper_Plane_PNG_Clip_Art_Image-1492395217 1.png'
@@ -19,6 +19,29 @@ function Contact() {
   const [email, setEmail] = useState('')
   const [inquiryType, setInquiryType] = useState('')
   const [message, setMessage] = useState('')
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false)
+  const inquiryRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!isInquiryOpen) return
+
+    function onPointerDown(event: MouseEvent) {
+      if (!inquiryRef.current?.contains(event.target as Node)) {
+        setIsInquiryOpen(false)
+      }
+    }
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') setIsInquiryOpen(false)
+    }
+
+    document.addEventListener('mousedown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isInquiryOpen])
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -90,24 +113,44 @@ function Contact() {
               />
             </label>
 
-            <label className={styles.field}>
-              <span className={styles.label}>Inquiry Type</span>
-              <select
-                className={styles.select}
-                name="inquiryType"
-                value={inquiryType}
-                onChange={(e) => setInquiryType(e.target.value)}
+            <div className={styles.field} ref={inquiryRef}>
+              <span className={styles.label} id="inquiry-type-label">
+                Inquiry Type
+              </span>
+              <input type="hidden" name="inquiryType" value={inquiryType} />
+              <button
+                type="button"
+                className={`${styles.select} ${inquiryType ? styles.selectValue : styles.selectPlaceholder}`}
+                aria-haspopup="listbox"
+                aria-expanded={isInquiryOpen}
+                aria-labelledby="inquiry-type-label"
+                onClick={() => setIsInquiryOpen((open) => !open)}
               >
-                <option value="" disabled>
-                  Select inquiry type
-                </option>
-                {inquiryTypes.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </select>
-            </label>
+                {inquiryType || 'Select inquiry type'}
+              </button>
+              {isInquiryOpen ? (
+                <ul
+                  className={styles.selectMenu}
+                  role="listbox"
+                  aria-labelledby="inquiry-type-label"
+                >
+                  {inquiryTypes.map((type) => (
+                    <li key={type} role="option" aria-selected={inquiryType === type}>
+                      <button
+                        type="button"
+                        className={styles.selectOption}
+                        onClick={() => {
+                          setInquiryType(type)
+                          setIsInquiryOpen(false)
+                        }}
+                      >
+                        {type}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
 
             <label className={styles.field}>
               <span className={styles.label}>Message</span>

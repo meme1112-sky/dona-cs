@@ -17,6 +17,19 @@
   background-size: 100% 100%;
 }
 
+@media screen and (max-width: 860px) {
+  .partners {
+    background-size: 100%;
+    margin-top: -50px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .partners {
+    margin-top: -30px;
+  }
+}
+
 .intro {
   position: relative;
   display: flex;
@@ -145,5 +158,11 @@
     transform: translateY(-50%) scale(0.85);
     transform-origin: right center;
     opacity: 0.85;
+  }
+}
+
+@media (max-width: 480px) {
+  .weapon {
+    opacity: 0.55;
   }
 }

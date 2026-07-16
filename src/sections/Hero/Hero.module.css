@@ -86,11 +86,16 @@
 .tagline {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 13px;
   font-size: 22px;
   font-weight: 500;
   color: var(--color-text);
   margin-bottom: 40px;
+}
+
+.tagline > span {
+  min-width: 0;
 }
 
 .taglineIcon {
@@ -141,56 +146,168 @@
   /* max-height: none; */
   object-fit: contain;
   margin-top: -9.5%;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+  .tagline {
+    font-size: 16px;
+    margin-bottom: -15px;
+  }
+
+  .csLogo {
+    right: -100px;
+  }
 }
 
 @media (max-width: 860px) {
   .hero {
     margin-top: 0;
+    padding-bottom: var(--space-6);
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: auto;
-    padding-block: var(--space-6);
+    padding-block: var(--space-5) var(--space-6);
     gap: var(--space-5);
+    margin-top: -30px;
   }
 
   .content {
+    width: 100%;
+    max-width: 28rem;
     align-items: center;
     text-align: center;
+    margin-top: 0;
+    gap: var(--space-4);
   }
 
   .title {
     justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: var(--space-2);
+  }
+
+  .donaLogo {
+    width: min(220px, 62vw);
+  }
+
+  .csLogo {
+    position: static;
+    right: auto;
+    width: min(100px, 26vw);
+    margin-bottom: 0;
+    margin-top: 50px;
+  }
+
+  .tagline {
+    justify-content: center;
+    font-size: clamp(1rem, 4.2vw, 1.25rem);
+    margin-bottom: 0;
+    gap: 10px;
+    line-height: 1.35;
+  }
+
+  .sniperIcon {
+    width: 22px;
+    height: 22px;
   }
 
   .description {
-    max-width: 42ch;
+    max-width: 34ch;
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+    margin-bottom: 0;
   }
 
   .actions {
     justify-content: center;
+    width: 100%;
+    margin-top: var(--space-3);
   }
 
   .banner {
+    order: -1;
     position: relative;
     top: auto;
     right: auto;
-    order: -1;
-    width: 100%;
+    width: min(100%, 320px);
     height: auto;
-    min-height: 340px;
+    min-height: 0;
+    margin-inline: auto;
   }
 
   .bannerImage {
-    max-height: 420px;
+    width: 100%;
+    max-width: 320px;
+    max-height: 380px;
+    margin-top: 0;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: var(--space-4);
+    padding-block: var(--space-4) var(--space-5);
+  }
+
+  .content {
+    gap: var(--space-3);
+    padding-inline: 2px;
   }
 
   .donaLogo {
-    width: min(240px, 58vw);
+    width: min(180px, 70vw);
   }
 
   .csLogo {
-    width: min(112px, 28vw);
+    width: min(84px, 30vw);
+  }
+
+  .tagline {
+    font-size: 1.05rem;
+    gap: 8px;
+  }
+
+  .sniperIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .description {
+    max-width: none;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    padding-inline: 4px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+  }
+
+  .actions > * {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .banner {
+    width: min(100%, 280px);
+  }
+
+  .bannerImage {
+    max-width: 280px;
+    max-height: 320px;
   }
 }
+

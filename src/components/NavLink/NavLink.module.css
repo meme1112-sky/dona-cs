@@ -1,6 +1,13 @@
 .container {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: var(--space-5);
+  }
 }
 
 .iconGroup {

@@ -197,3 +197,25 @@
   height: 18px;
   object-fit: contain;
 }
+
+@media (max-width: 640px) {
+  .content {
+    padding: var(--space-5);
+  }
+}
+
+@media (max-width: 420px) {
+  .top,
+  .topSplit {
+    flex-wrap: wrap;
+    row-gap: var(--space-3);
+  }
+
+  .codeLabel {
+    padding: 12px 14px;
+  }
+
+  .logoSlotEmpty {
+    flex-basis: 100%;
+  }
+}
