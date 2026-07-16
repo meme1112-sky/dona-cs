@@ -1,21 +1,31 @@
+import {
+  FaTwitch,
+  FaYoutube,
+  FaInstagram,
+  FaTiktok,
+  FaTwitter,
+  FaSteam,
+} from 'react-icons/fa'
 import styles from './IconLink.module.css'
-import twitchIcon from '@/assets/twitch (2) 1.png'
-import youtubeIcon from '@/assets/youtube (3) 1.png'
-import instagramIcon from '@/assets/instagram (3) 1.png'
-import tiktokIcon from '@/assets/tik-tok (1) 1.png'
-import twitterIcon from '@/assets/twitter (4) 1.png'
-import steamIcon from '@/assets/steam (2) 1.png'
+
+const socialLinks = [
+  { Icon: FaTwitch, label: 'Twitch', href: '#' },
+  { Icon: FaYoutube, label: 'YouTube', href: '#' },
+  { Icon: FaInstagram, label: 'Instagram', href: '#' },
+  { Icon: FaTiktok, label: 'TikTok', href: '#' },
+  { Icon: FaTwitter, label: 'Twitter', href: '#' },
+  { Icon: FaSteam, label: 'Steam', href: '#' },
+]
 
 function IconLink() {
   return (
-    <a className={styles.container}>
-      <img src={twitchIcon} alt="Icon" className={styles.icon} />
-      <img src={youtubeIcon} alt="Icon" className={styles.icon} />
-      <img src={instagramIcon} alt="Icon" className={styles.icon} />
-      <img src={tiktokIcon} alt="Icon" className={styles.icon} />
-      <img src={twitterIcon} alt="Icon" className={styles.icon} />
-      <img src={steamIcon} alt="Icon" className={styles.icon} />
-    </a>
+    <div className={styles.container}>
+      {socialLinks.map(({ Icon, label, href }) => (
+        <a key={label} href={href} className={styles.link} aria-label={label}>
+          <Icon className={styles.icon} aria-hidden="true" />
+        </a>
+      ))}
+    </div>
   )
 }
 

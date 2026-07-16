@@ -5,24 +5,37 @@
 
 .iconGroup {
   display: flex;
+  align-items: center;
   gap: 10px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
-.link:hover {
-  color: var(--color-primary);
+.iconGroup:hover .iconTitle,
+.iconGroup:focus-visible .iconTitle {
+  color: #ca9f55;
+}
+
+.iconGroup:hover .icon,
+.iconGroup:focus-visible .icon {
+  /* Recolor PNG icon to #ca9f55 */
+  filter: brightness(0) saturate(100%) invert(72%) sepia(42%) saturate(628%)
+    hue-rotate(359deg) brightness(93%) contrast(88%);
 }
 
 .icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
+  transition: filter 0.18s ease;
 }
 
 .iconTitle {
   font-family: var(--font-sans);
   font-size: 16px;
-  letter-spacing: 1%;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: var(--color-text-muted)
+  color: var(--color-text-muted);
+  transition: color 0.18s ease;
 }

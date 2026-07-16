@@ -13,7 +13,7 @@
   background-image: url('../../assets/faq-bg.svg');
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: 100% 100%;
+  background-size: 100vw 900px;
 }
 
 .inner {

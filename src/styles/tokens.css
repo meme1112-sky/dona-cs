@@ -17,8 +17,8 @@
   --color-rich-brown: #4c3629;
 
   /* Typography */
-  --font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-script: 'Alex Brush', cursive;
+  --font-sans: 'Chakra Petch', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-script: 'Chakra Petch', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
   --fs-base: 1rem;

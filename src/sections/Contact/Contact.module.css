@@ -146,7 +146,7 @@
 
 .formHintLink {
   color: var(--color-primary);
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 2px;
 }
 

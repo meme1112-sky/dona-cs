@@ -2,20 +2,19 @@ import styles from './NavLink.module.css'
 import BonusesIcon from '@/assets/layer1.png'
 import ContactIcon from '@/assets/email (1) 1.png'
 
-
 function NavLink() {
   return (
-    <a className={styles.container}>
-      <div className={styles.iconGroup}>
-        <img src={BonusesIcon} alt="Icon" className={styles.icon} />
-        <p className={styles.iconTitle}>bonuses</p>
-      </div>
-      
-      <div className={styles.iconGroup}>
-        <img src={ContactIcon} alt="Icon" className={styles.icon} />
-        <p className={styles.iconTitle}>contact</p>
-      </div>
-    </a>
+    <div className={styles.container}>
+      <a href="#bonuses" className={styles.iconGroup}>
+        <img src={BonusesIcon} alt="" className={styles.icon} />
+        <span className={styles.iconTitle}>bonuses</span>
+      </a>
+
+      <a href="#contact" className={styles.iconGroup}>
+        <img src={ContactIcon} alt="" className={styles.icon} />
+        <span className={styles.iconTitle}>contact</span>
+      </a>
+    </div>
   )
 }
 

@@ -66,3 +66,7 @@ button {
   overflow: visible;
   max-width: 100%;
 }
+
+*{
+  scroll-behavior: smooth;
+}

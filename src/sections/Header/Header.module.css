@@ -17,6 +17,7 @@
   background: #0C1915;
   backdrop-filter: blur(12px);
   justify-content: space-between;
+  position: relative;
 }
 
 .heroLogo {
@@ -31,6 +32,9 @@
   display: flex;
   align-items: center;
   gap: var(--space-6);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .socials {
