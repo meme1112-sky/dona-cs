@@ -35,10 +35,12 @@ function PartnerCard({
     }
   }
 
+  const isPlaceholder = !logo
+
   return (
     <article className={styles.card}>
-      <div className={styles.top}>
-        <div className={styles.logoSlot}>
+      <div className={isPlaceholder ? `${styles.top} ${styles.topSplit}` : styles.top}>
+        <div className={isPlaceholder ? `${styles.logoSlot} ${styles.logoSlotEmpty}` : styles.logoSlot}>
           {logo ? (
             <img src={logo} alt={logoAlt} className={styles.logo} />
           ) : null}
@@ -50,37 +52,51 @@ function PartnerCard({
           onClick={handleCopy}
           aria-label={`Copy code ${code}`}
         >
-          <span className={styles.codeLabel}>
-            CODE: <strong className={styles.codeLabelStrong}> {code}</strong>
-          </span>
-          <img src={copyIcon} alt="" className={styles.copyIcon} />
+          <div className={styles.codeBox}>
+            <span className={styles.codeLabel}>
+              CODE: <strong className={styles.codeLabelStrong}>{code}</strong>
+            </span>
+            <div className={styles.copyIconWrap}>
+              <img src={copyIcon} alt="" className={styles.copyIcon} />
+            </div>
+          </div>
         </button>
       </div>
 
-      <div className={styles.body}>
+      <div className={styles.content}>
         {benefits ? (
-          <ul className={styles.benefits}>
-            {benefits.map((item) => (
-              <li key={item} className={styles.benefit}>
-                <img src={starIcon} alt="" className={styles.star} />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+          <>
+            <div className={styles.body}>
+              <ul className={styles.benefits}>
+                {benefits.map((item) => (
+                  <li key={item} className={styles.benefit}>
+                    <img src={starIcon} alt="" className={styles.star} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <Button variant="primary" className={styles.action} onClick={onAction}>
+              {actionIcon ? (
+                <img src={bonusIcon} alt="" className={styles.actionIcon} />
+              ) : null}
+              {actionLabel}
+            </Button>
+          </>
         ) : (
-          <div className={styles.placeholder}>
-            <p className={styles.placeholderTitle}>THIS SPOT CAN BE <span>YOURS</span>!</p>
-            <p className={styles.placeholderText}>{placeholderText}</p>
+          <div className={styles.placeholderContent}>
+            <div className={styles.placeholder}>
+              <p className={styles.placeholderTitle}>THIS SPOT CAN BE <span>YOURS</span>!</p>
+              <p className={styles.placeholderText}>{placeholderText}</p>
+            </div>
+
+            <Button variant="primary" className={styles.action} onClick={onAction}>
+              {actionLabel}
+            </Button>
           </div>
         )}
       </div>
-
-      <Button variant="primary" className={styles.action} onClick={onAction}>
-        {actionIcon ? (
-          <img src={bonusIcon} alt="" className={styles.actionIcon} />
-        ) : null}
-        {actionLabel}
-      </Button>
     </article>
   )
 }

@@ -1,11 +1,12 @@
 .card {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  padding: var(--space-4);
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  /* gap: var(--space-5); */
+  /* padding: var(--space-4); */
+  /* border-radius: var(--radius-md); */
+  background: #0D1B17;
+  border: 1px solid #332B3F;
+  border-radius: 20px;
 }
 
 .top {
@@ -14,9 +15,18 @@
   justify-content: space-between;
   gap: var(--space-3);
   min-height: 56px;
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-sm);
-  background: color-mix(in srgb, #000 35%, var(--color-surface));
+  padding: 20px 20px 20px 38px;
+  border-radius: 20px 20px 0px 0px;
+  background: #0a1512;
+  border-bottom: 1px solid #332B3F;
+}
+
+/* Placeholder card: two separate top boxes like the mockup */
+.topSplit {
+  gap: 12px;
+  padding: 16px;
+  background: transparent;
+  border-bottom: 0;
 }
 
 .logoSlot {
@@ -26,8 +36,17 @@
   min-width: 96px;
 }
 
+.logoSlotEmpty {
+  flex: 1;
+  min-height: 52px;
+  min-width: 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #0a151214, #333735a6);
+  /* border: 1px solid #332B3F; */
+}
+
 .logo {
-  height: 22px;
+  height: 35px;
   width: auto;
   max-width: 120px;
   object-fit: contain;
@@ -35,34 +54,56 @@
 }
 
 .code {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--color-primary);
   font: inherit;
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  letter-spacing: 0.04em;
   cursor: pointer;
-  white-space: nowrap;
 }
 
-.code strong {
-  color: var(--color-primary);
-  font-weight: 700;
+.codeBox {
+  display: inline-flex;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: 2px 11px 2px 2px;
+  background: rgba(40, 83, 71, 0.19);
+}
+
+.topSplit .codeBox {
+  min-height: 52px;
+  border-radius: 2px 11px 2px 2px;
+  background: #0a1512;
+  /* border: 1px solid #332B3F; */
 }
 
 .codeLabel {
-  color: white;
-  font-weight: lighter !important;
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 20px;
+  color: #fff;
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Gradient only on the last (placeholder) card */
+.topSplit .codeLabel {
+  background: linear-gradient(90deg, #dadada1a, #00000017);
 }
 
 .codeLabelStrong {
   color: var(--color-primary);
-  font-weight: lighter !important;
+  font-weight: 400;
+}
+
+.copyIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  background: #E1E1E11A;
+  /* border-left: 1px solid rgba(255, 255, 255, 0.08); */
 }
 
 .copyIcon {
@@ -72,13 +113,21 @@
   mix-blend-mode: lighten;
 }
 
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: 32px;
+}
+
 .body {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 96px;
-  padding-inline: var(--space-2);
+  /* padding-inline: var(--space-2); */
 }
 
 .benefits {
@@ -109,6 +158,16 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+}
+
+.placeholderContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-5);
+  justify-content: space-between;
+  min-height: 96px;
+  /* padding-inline: var(--space-2); */
 }
 
 .placeholderTitle {
