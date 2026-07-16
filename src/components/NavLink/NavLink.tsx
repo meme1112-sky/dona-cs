@@ -1,7 +1,6 @@
-import type { AnchorHTMLAttributes, ReactNode } from 'react'
 import styles from './NavLink.module.css'
 import BonusesIcon from '@/assets/layer1.png'
-import ContactIcon from'@/assets/email (1) 1.png'
+import ContactIcon from '@/assets/email (1) 1.png'
 
 
 function NavLink() {

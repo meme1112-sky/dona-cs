@@ -1,4 +1,3 @@
-import { GiCrosshair } from 'react-icons/gi'
 import Container from '@/components/Container/Container'
 import Button from '@/components/Button/Button'
 import donaLogo from '@/assets/dona.png'

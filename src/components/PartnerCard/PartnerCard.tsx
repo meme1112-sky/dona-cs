@@ -21,7 +21,6 @@ function PartnerCard({
   logoAlt = '',
   code = 'DONA',
   benefits,
-  placeholderTitle,
   placeholderText,
   actionLabel,
   actionIcon = false,
@@ -87,7 +86,9 @@ function PartnerCard({
         ) : (
           <div className={styles.placeholderContent}>
             <div className={styles.placeholder}>
-              <p className={styles.placeholderTitle}>THIS SPOT CAN BE <span>YOURS</span>!</p>
+              <p className={styles.placeholderTitle}>
+                THIS SPOT CAN BE <span>YOURS</span>!
+              </p>
               <p className={styles.placeholderText}>{placeholderText}</p>
             </div>
 
