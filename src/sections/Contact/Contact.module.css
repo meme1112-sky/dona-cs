@@ -1,0 +1,333 @@
+.contact {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-8) 0;
+  /*
+   * Contact background — 9 design sample points:
+   * 1/2 top corners: #060d0b
+   * 3/4 upper-mid sides: #070e0c
+   * 5/6 lower-mid sides: #181b12
+   * 7/9 bottom corners: #11150f
+   * 8 bottom center: #332e1b
+   */
+  background-color: #060d0b;
+  background-image:
+    radial-gradient(
+      ellipse 78% 62% at 50% 100%,
+      #332e1b 0%,
+      rgba(51, 46, 27, 0.78) 20%,
+      rgba(24, 27, 18, 0.62) 48%,
+      rgba(17, 21, 15, 0.42) 72%,
+      transparent 92%
+    ),
+    radial-gradient(
+      ellipse 64% 44% at 0% 100%,
+      #11150f 0%,
+      rgba(17, 21, 15, 0.78) 34%,
+      rgba(24, 27, 18, 0.28) 68%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 64% 44% at 100% 100%,
+      #11150f 0%,
+      rgba(17, 21, 15, 0.78) 34%,
+      rgba(24, 27, 18, 0.28) 68%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      #060d0b 0%,
+      #060d0b 18%,
+      #070e0c 44%,
+      #181b12 74%,
+      #11150f 100%
+    );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---- 1. First part: heading ---- */
+.first {
+  text-align: center;
+  margin-bottom: var(--space-7);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 30px;
+}
+
+.titleAccent {
+  color: var(--color-primary);
+}
+
+.subtitle {
+  margin-top: var(--space-3);
+  font-size: var(--fs-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+/* ---- 2. Contact form part ---- */
+.formPart {
+  width: 100%;
+  max-width: 720px;
+  padding-bottom: 120px;
+}
+
+.form {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: rgba(13, 15, 14, 0.55);
+  backdrop-filter: blur(8px);
+  opacity: 0.7;
+}
+
+/* Corner-anchored border: bright top-left + bottom-right, fades toward opposite corners */
+.form::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(89, 87, 87, 0.42) 0%,
+    rgba(255, 255, 255, 0.08) 22%,
+    rgba(255, 255, 255, 0.02) 50%,
+    rgba(255, 255, 255, 0.08) 78%,
+    rgba(89, 87, 87, 0.42) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#ffffff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.formIntro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.formTitle {
+  margin: 0;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.formHint {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: #ffffff;
+}
+
+.formHintLink {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--fs-sm);
+  color: #ffffff;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--fs-sm);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(163, 163, 156, 0.7);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--color-text-muted) 50%),
+    linear-gradient(135deg, var(--color-text-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.select:invalid,
+.select option[value=''] {
+  color: rgba(163, 163, 156, 0.7);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit {
+  width: 100%;
+  margin-top: var(--space-2);
+  font-weight: 600;
+}
+
+/* ---- 3. Last part: curved bottom glow ---- */
+.last {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: clamp(160px, 20vw, 260px);
+  margin-top: var(--space-6);
+  pointer-events: none;
+  /* Continues smooth bottom-center convergence (points 7, 8, 9) */
+  background:
+    radial-gradient(
+      ellipse 92% 96% at 50% 100%,
+      #332e1b 0%,
+      rgba(51, 46, 27, 0.82) 30%,
+      #11150f 66%,
+      rgba(17, 21, 15, 0.4) 88%,
+      transparent 100%
+    );
+  /* Convex upward bottom edge */
+  border-radius: 0 0 50% 50% / 0 0 40% 40%;
+}
+
+/* ---- Decorations: planes + trails ---- */
+.decorLeft,
+.decorRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: min(28vw, 320px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorLeft {
+  left: 0;
+}
+
+.decorRight {
+  right: 0;
+}
+
+.trailLeft,
+.trailRight,
+.planeLeft,
+.planeRight {
+  position: absolute;
+  max-width: none;
+  mix-blend-mode: lighten;
+}
+
+.trailLeft {
+  left: 48%;
+  top: 4%;
+  width: 70%;
+  height: 75%;
+  object-fit: contain;
+  object-position: left center;
+  opacity: 0.85;
+}
+
+.planeLeft {
+  left: 70%;
+  top: 17%;
+  width: clamp(72px, 10vw, 120px);
+  scale: 2.1;
+}
+
+.trailRight {
+  right: 39%;
+  top: 36%;
+  width: 65%;
+  height: 55%;
+  object-fit: contain;
+  object-position: right center;
+  opacity: 0.85;
+}
+
+.planeRight {
+  right: 55%;
+  top: 42%;
+  width: clamp(64px, 9vw, 110px);
+  transform: rotate(0deg);
+}
+
+@media (max-width: 980px) {
+  .decorLeft,
+  .decorRight {
+    opacity: 0.45;
+    width: min(22vw, 180px);
+  }
+
+  .planeLeft,
+  .planeRight {
+    width: clamp(48px, 8vw, 72px);
+  }
+}
+
+@media (max-width: 640px) {
+  .contact {
+    padding-block: var(--space-7) 0;
+  }
+
+  .form {
+    padding: var(--space-5);
+  }
+
+  .decorLeft,
+  .decorRight {
+    display: none;
+  }
+
+  .last {
+    height: 120px;
+    margin-top: var(--space-6);
+  }
+}

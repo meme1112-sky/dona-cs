@@ -1,18 +1,27 @@
 import Container from '@/components/Container/Container'
-import styles from './Footer.module.css'
+import NavLink from '@/components/NavLink/NavLink'
+import IconLink from '@/components/IconLink/IconLink'
+import logo from '@/assets/dona1.png'
+import styles from './footer.module.css'
 
-function Footer() {
+function Header() {
   return (
-    <footer id="footer" className={styles.footer}>
-      <Container className={styles.inner}>
-        <span>&copy; {new Date().getFullYear()} Your Company</span>
-        <nav className={styles.links}>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
+    <Container>
+      <header className={styles.header}>
+        <img src={logo} alt="Logo" className={styles.heroLogo} />
+
+        <nav className={styles.nav} aria-label="Primary">
+          <NavLink />
         </nav>
-      </Container>
-    </footer>
+
+        <ul className={styles.socials} aria-label="Social links">
+          <li>
+            <IconLink />
+          </li>
+        </ul>
+      </header>
+    </Container>
   )
 }
 
-export default Footer
+export default Header

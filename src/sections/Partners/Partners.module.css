@@ -8,7 +8,7 @@
   padding-block: clamp(96px, 11vw, 150px) var(--space-9);
   overflow: hidden;
   z-index: 5;
-  /* No solid fill — only the PNG (transparent cutout + full-section gradient) */
+  /* Transparent base so PNG cutout shows Hero behind the curved top */
   background-color: transparent;
   background-image: url('../../assets/partners-bg.png');
   background-repeat: no-repeat;
