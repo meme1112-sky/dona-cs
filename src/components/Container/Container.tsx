@@ -1,13 +1,14 @@
-import type { PropsWithChildren } from 'react'
+import type { ComponentPropsWithoutRef, PropsWithChildren } from 'react'
 import styles from './Container.module.css'
 
-type ContainerProps = PropsWithChildren<{
-  className?: string
-}>
+type ContainerProps = PropsWithChildren<ComponentPropsWithoutRef<'div'>>
 
-function Container({ children, className }: ContainerProps) {
+function Container({ children, className, ...props }: ContainerProps) {
   return (
-    <div className={className ? `${styles.container} ${className}` : styles.container}>
+    <div
+      {...props}
+      className={className ? `${styles.container} ${className}` : styles.container}
+    >
       {children}
     </div>
   )

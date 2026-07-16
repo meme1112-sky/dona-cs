@@ -82,7 +82,7 @@
 .formPart {
   width: 100%;
   max-width: 720px;
-  padding-bottom: 120px;
+  padding-bottom: 200px;
 }
 
 .form {
@@ -284,7 +284,7 @@
 
 .trailRight {
   right: 39%;
-  top: 36%;
+  top: 34%;
   width: 65%;
   height: 55%;
   object-fit: contain;

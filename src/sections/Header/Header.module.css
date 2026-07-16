@@ -24,6 +24,7 @@
   height: 69px;
   object-fit: contain;
   margin-bottom: 45px;
+  cursor: pointer;
 }
 
 .nav {

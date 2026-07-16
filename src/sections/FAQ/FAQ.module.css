@@ -1,0 +1,150 @@
+.faq {
+  position: relative;
+  /*
+   * Overlap Contact so the recessed top curve reveals its bottom gradient.
+   * Height tuned to design (Send Message → FAQ title zone).
+   */
+  margin-top: clamp(-180px, -11vw, -88px);
+  padding-block: clamp(88px, 9vw, 130px) clamp(64px, 7vw, 110px);
+  overflow: hidden;
+  z-index: 5;
+  /* Transparent base so Contact gradient shows through the curved top */
+  background-color: transparent;
+  background-image: url('../../assets/faq-bg.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(28px, 4vw, 44px);
+  margin-top: 100px;
+}
+
+.title {
+  font-size: clamp(2.25rem, 4.3vw, 3.3rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  margin-bottom: 60px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item {
+  border-radius: 8px;
+  background: #0c1915;
+  overflow: hidden;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: 16px 28px;
+  cursor: pointer;
+  list-style: none;
+  background: #0c1915;
+  transition: background-color 0.18s ease;
+
+  /* Remove default triangle marker */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.question {
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: rgba(245, 242, 234, 0.85);
+  line-height: 1.3;
+}
+
+.chevron {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid rgba(245, 242, 234, 0.7);
+  border-bottom: 2px solid rgba(245, 242, 234, 0.7);
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 0.18s ease;
+  flex: 0 0 auto;
+}
+
+.item[open] .chevron {
+  transform: rotate(-135deg) translateY(-1px);
+}
+
+.item[open] .summary {
+  background: linear-gradient(180deg, #514725 0%, #41391f 100%);
+}
+
+.item[open] .question {
+  color: var(--color-primary);
+}
+
+.item[open] {
+  border-color: rgba(111, 97, 58, 0.5);
+}
+
+.answer {
+  padding: 18px 20px 18px;
+  background: linear-gradient(180deg, #191b13 0%, #141811 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  color: rgba(163, 163, 156, 0.95);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
+
+.item[open] .answer {
+  animation: faqIn 160ms ease-out;
+}
+
+@keyframes faqIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .summary {
+    padding: 14px 16px;
+  }
+
+  .answer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .question {
+    font-size: 0.72rem;
+  }
+}
+

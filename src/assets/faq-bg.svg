@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="faqBg" x1="0" y1="0" x2="0" y2="800" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#060d0b" />
+      <stop offset="0.42" stop-color="#070e0c" />
+      <stop offset="1" stop-color="#11150f" />
+    </linearGradient>
+  </defs>
+  <path
+    fill="url(#faqBg)"
+    d="M0,56 Q720,128 1440,56 L1440,800 L0,800 Z"
+  />
+</svg>
