@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import donaLogo from '@/assets/dona.png'
-import csLogo from '@/assets/CS.png'
 import styles from './Preloader.module.css'
 
 const MIN_VISIBLE_MS = 700
@@ -39,9 +37,9 @@ function Preloader() {
       aria-live="polite"
       aria-hidden={isHidden}
     >
-      <div className={styles.logo}>
-        <img src={donaLogo} alt="" className={styles.donaLogo} />
-        <img src={csLogo} alt="" className={styles.csLogo} />
+      <div className={styles.logo} aria-hidden="true">
+        <span className={styles.donaText}>dona</span>
+        <span className={styles.csText}>CS</span>
       </div>
       <div className={styles.bar} />
       <span className={styles.srOnly}>Loading dona CS…</span>
