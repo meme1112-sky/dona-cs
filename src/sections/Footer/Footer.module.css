@@ -14,7 +14,7 @@
   height: 70px;
   padding-inline: var(--space-6);
   border-radius: 999px;
-  background: var(--color-surface-translucent);
+  background: #0C1915;
   backdrop-filter: blur(12px);
   justify-content: space-between;
 }
