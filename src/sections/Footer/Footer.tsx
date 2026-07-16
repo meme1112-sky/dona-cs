@@ -2,7 +2,7 @@ import Container from '@/components/Container/Container'
 import NavLink from '@/components/NavLink/NavLink'
 import IconLink from '@/components/IconLink/IconLink'
 import logo from '@/assets/dona1.png'
-import styles from './footer.module.css'
+import styles from './Footer.module.css'
 
 function Header() {
   return (
