@@ -23,7 +23,9 @@ function Header() {
   return (
     <Container className={styles.wrapper}>
       <header className={styles.header}>
-        <img src={logo} alt="Logo" className={styles.heroLogo} />
+        <a href="/">
+          <img src={logo} alt="Logo" className={styles.heroLogo} />
+        </a>
 
         <button
           type="button"

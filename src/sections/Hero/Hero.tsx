@@ -32,11 +32,13 @@ function Hero() {
             </p>
 
             <div className={styles.actions}>
-              <Button variant="primary" >
+              <Button href="#bonuses" variant="primary">
                 <img src={bonusIcon} alt="" className={styles.bonusIcon} />
                 Bonuses
               </Button>
-              <Button variant="secondary" className={styles.contactIcon}>Contact Me</Button>
+              <Button href="#contact" variant="secondary" className={styles.contactIcon}>
+                Contact Me
+              </Button>
             </div>
           </div>
 

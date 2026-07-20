@@ -8,7 +8,9 @@ function Header() {
   return (
     <Container>
       <footer className={styles.footer}>
-        <img src={logo} alt="Logo" className={styles.heroLogo} />
+        <a href="/">
+          <img src={logo} alt="Logo" className={styles.heroLogo} />
+        </a>
 
         <nav className={styles.nav} aria-label="Primary">
           <NavLink />

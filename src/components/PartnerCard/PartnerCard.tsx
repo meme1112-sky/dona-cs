@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from 'react'
 import Button from '@/components/Button/Button'
+import CopyToast from '@/components/CopyToast/CopyToast'
 import starIcon from '@/assets/Star 1.png'
 import copyIcon from '@/assets/copy (2) 1.png'
 import bonusIcon from '@/assets/Icon wrapper.png'
@@ -16,6 +18,24 @@ type PartnerCardProps = {
   onAction?: () => void
 }
 
+async function copyText(value: string) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(value)
+    return
+  }
+
+  // Fallback for older browsers / non-secure contexts
+  const textarea = document.createElement('textarea')
+  textarea.value = value
+  textarea.setAttribute('readonly', '')
+  textarea.style.position = 'fixed'
+  textarea.style.opacity = '0'
+  document.body.appendChild(textarea)
+  textarea.select()
+  document.execCommand('copy')
+  document.body.removeChild(textarea)
+}
+
 function PartnerCard({
   logo,
   logoAlt = '',
@@ -26,11 +46,32 @@ function PartnerCard({
   actionIcon = false,
   onAction,
 }: PartnerCardProps) {
+  const [toastVisible, setToastVisible] = useState(false)
+  const toastTimer = useRef<number | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (toastTimer.current !== null) {
+        window.clearTimeout(toastTimer.current)
+      }
+    }
+  }, [])
+
   async function handleCopy() {
     try {
-      await navigator.clipboard.writeText(code)
+      await copyText(code)
+      setToastVisible(true)
+
+      if (toastTimer.current !== null) {
+        window.clearTimeout(toastTimer.current)
+      }
+
+      toastTimer.current = window.setTimeout(() => {
+        setToastVisible(false)
+        toastTimer.current = null
+      }, 2000)
     } catch {
-      // Clipboard may be unavailable in non-secure contexts.
+      // Clipboard may be unavailable.
     }
   }
 
@@ -98,6 +139,8 @@ function PartnerCard({
           </div>
         )}
       </div>
+
+      <CopyToast message={`Copied “${code}”`} visible={toastVisible} />
     </article>
   )
 }
