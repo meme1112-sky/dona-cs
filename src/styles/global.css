@@ -9,6 +9,7 @@ html {
   overflow-x: hidden;
   /* Single page scrollbar only (avoid nested scroll on body/#root) */
   overflow-y: auto;
+  scrollbar-width: none;
 }
 
 body {
