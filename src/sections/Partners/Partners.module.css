@@ -4,7 +4,7 @@
    * Raise entire Partners block to design line (mid-hero).
    * Previous value (revert if needed): clamp(-88px, -7vw, -56px)
    */
-  margin-top: clamp(-400px, -32vw, -260px);
+  margin-top: clamp(-550px, -36vw, -260px);
   padding-block: clamp(96px, 11vw, 150px) var(--space-9);
   overflow: hidden;
   z-index: 5;
