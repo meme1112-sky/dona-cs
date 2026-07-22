@@ -1,27 +1,27 @@
-import {
-  FaTwitch,
-  FaYoutube,
-  FaInstagram,
-  FaTiktok,
-  FaTwitter,
-  FaSteam,
-} from 'react-icons/fa'
+import { FaTwitch, FaYoutube, FaInstagram, FaSteam } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 import styles from './IconLink.module.css'
 
 const socialLinks = [
-  { Icon: FaTwitch, label: 'Twitch', href: '#' },
-  { Icon: FaYoutube, label: 'YouTube', href: '#' },
-  { Icon: FaInstagram, label: 'Instagram', href: '#' },
-  { Icon: FaTiktok, label: 'TikTok', href: '#' },
-  { Icon: FaTwitter, label: 'Twitter', href: '#' },
-  { Icon: FaSteam, label: 'Steam', href: '#' },
+  { Icon: FaTwitch, label: 'Twitch', href: 'https://www.twitch.tv/donacs' },
+  { Icon: FaYoutube, label: 'YouTube', href: 'https://www.youtube.com/@donacsgo' },
+  { Icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/donacsgo' },
+  { Icon: FaXTwitter, label: 'X (Twitter)', href: 'https://x.com/donacsgo' },
+  { Icon: FaSteam, label: 'Steam', href: 'https://steamcommunity.com/id/donacsgo/' },
 ]
 
 function IconLink() {
   return (
     <div className={styles.container}>
       {socialLinks.map(({ Icon, label, href }) => (
-        <a key={label} href={href} className={styles.link} aria-label={label}>
+        <a
+          key={label}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+          aria-label={label}
+        >
           <Icon className={styles.icon} aria-hidden="true" />
         </a>
       ))}
