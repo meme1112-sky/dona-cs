@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { FaTwitch, FaYoutube, FaInstagram, FaSteam } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import styles from './IconLink.module.css'
@@ -11,6 +12,8 @@ const socialLinks = [
 ]
 
 function IconLink() {
+  const [clicked, setClicked] = useState<Set<string>>(new Set())
+
   return (
     <div className={styles.container}>
       {socialLinks.map(({ Icon, label, href }) => (
@@ -19,8 +22,9 @@ function IconLink() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className={styles.link}
+          className={clicked.has(label) ? `${styles.link} ${styles.clicked}` : styles.link}
           aria-label={label}
+          onClick={() => setClicked((prev) => new Set(prev).add(label))}
         >
           <Icon className={styles.icon} aria-hidden="true" />
         </a>
