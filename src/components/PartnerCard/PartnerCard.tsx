@@ -89,14 +89,13 @@ function PartnerCard({
         <button
           type="button"
           className={styles.code}
-          onClick={handleCopy}
           aria-label={`Copy code ${code}`}
         >
           <div className={styles.codeBox}>
             <span className={styles.codeLabel}>
               CODE: <strong className={styles.codeLabelStrong}>{code}</strong>
             </span>
-            <div className={styles.copyIconWrap}>
+            <div className={styles.copyIconWrap} onClick={handleCopy}>
               <img src={copyIcon} alt="" className={styles.copyIcon} />
             </div>
           </div>

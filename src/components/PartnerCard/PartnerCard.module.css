@@ -58,7 +58,6 @@
   border: 0;
   background: transparent;
   font: inherit;
-  cursor: pointer;
 }
 
 .codeBox {
@@ -104,6 +103,11 @@
   padding: 0 16px;
   background: #E1E1E11A;
   /* border-left: 1px solid rgba(255, 255, 255, 0.08); */
+}
+
+.copyIconWrap:hover {
+  background: #00000017;
+  cursor: pointer;
 }
 
 .copyIcon {
