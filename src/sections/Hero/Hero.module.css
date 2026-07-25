@@ -138,6 +138,8 @@
   pointer-events: none;
   z-index: 0;
   top: 30%;
+  margin-top: -7.7%;
+  overflow: hidden;
 }
 
 .bannerImage {
@@ -145,7 +147,6 @@
   /* max-width: none; */
   /* max-height: none; */
   object-fit: contain;
-  margin-top: -12.5%;
   position: relative;
   z-index: 1;
   left: 8%;
@@ -241,13 +242,13 @@
     height: auto;
     min-height: 0;
     margin-inline: auto;
+    margin-top: 0;
   }
 
   .bannerImage {
     width: 100%;
     max-width: 320px;
     max-height: 380px;
-    margin-top: 0;
     object-fit: contain;
     object-position: center bottom;
     left: 0;
